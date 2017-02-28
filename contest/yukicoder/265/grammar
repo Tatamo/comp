@@ -1,0 +1,16 @@
+DIGITS		/[1-9][0-9]*/
+X		"x"
+PLUS		"+"
+ASTERISK	"*"
+LDIV		"d{"
+RDIV		"}"
+!ENDLINE	/(\r\n|\r|\n)+/
+!WHITESPACE	/[ \f\t\v\u00a0\u1680\u180e\u2000-\u200a\u202f\u205f\u3000\ufeff]+/
+INVALID	/./
+
+
+$EXP :		DIVTERM | EXP　PLUS　DIVTERM;
+DIVTERM :	TERM | DIV;
+TERM :		ATOM | TERM ASTERISK ATOM;
+ATOM :		DIGITS | X;
+DIV :		LDIV EXP RDIV;
