@@ -245,12 +245,10 @@ var Parser = (function () {
                 // 対応する規則の右辺の記号の数だけスタックからポップする
                 for (var i = 0; i < rnum; i++)
                     state_stack.pop();
-                // rnumの数だけスタックからポップする
-                var children = rnum == 0 ? [] : result_stack.slice(rnum * -1);
                 // rnumが0でないなら、右辺の記号の数だけスタックからポップする
-                if (rnum != 0) {
-                    result_stack = result_stack.slice(0, rnum * -1);
-                }
+                var children = [];
+                for (var i = 0; i < rnum; i++)
+                    children[rnum - 1 - i] = result_stack.pop();
                 result_stack.push(callback({ token: syntax_item.ltoken, children: children, pattern: syntax_item.pattern, terminal: false }));
                 // このままgotoオペレーションを行う
                 state = state_stack[state_stack.length - 1];
