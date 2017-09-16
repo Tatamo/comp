@@ -1,0 +1,17 @@
+{
+  "name": "comp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc --watch",
+    "tsc_make": "tsc",
+    "typings_install": "typings install"
+  },
+  "author": "Tatamo",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "typescript": "^2.1.1"
+  }
+}
