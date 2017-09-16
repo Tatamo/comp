@@ -2,4 +2,5 @@ out
 a.out
 node_modules/
 typings/
+gomi/
 
