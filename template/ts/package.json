@@ -5,13 +5,13 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc --watch",
-    "tsc_make": "tsc",
-    "typings_install": "typings install"
+    "watch": "tsc --watch",
+    "build": "tsc"
   },
   "author": "Tatamo",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "typescript": "^2.1.1"
+    "@types/node": "^8.0.30",
+    "typescript": "^2.5.2"
   }
 }
