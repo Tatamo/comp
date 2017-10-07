@@ -1,0 +1,17 @@
+{
+  "name": "comp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc --watch",
+    "build": "tsc"
+  },
+  "author": "Tatamo",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@types/node": "^8.0.30",
+    "typescript": "^2.5.2"
+  }
+}
