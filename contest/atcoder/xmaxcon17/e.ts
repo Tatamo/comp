@@ -4,26 +4,24 @@ let input = (fs.readFileSync("/dev/stdin", "utf8") as string).split("\n");
 const s = input[0];
 const t = input[1];
 
-const solve = (s: string, t: string): boolean => {
-	/*
-	わかりませんでした
-	 */
-	return true;
-};
-
-if (s.replace(/[AB]/g, "") != t.replace(/[AB]/g, "")) {
-	console.log("NO");
+const dp = new Array(s.length + 1);
+for (let i = 0; i <= s.length + 1; i++) {
+	dp[i] = new Array(t.length + 2).fill(false);
 }
-else {
-	const ss = s.split(/[^AB]/);
-	const ts = t.split(/[^AB]/);
-	if (ss.length !== ts.length) console.error("something wrong");
-	let flg_ok = true;
-	for (let i = 0; i < ss.length; i++) {
-		if (!solve(ss[i], ts[i])) {
-			console.log("NO");
-			flg_ok = false;
+
+dp[0][0] = true;
+for (let i = 0; i <= s.length; i++) {
+	for (let ii = 0; ii <= t.length; ii++) {
+		if (!dp[i][ii]) continue;
+		if (s[i] === "A") {
+			dp[i + 1][ii] = dp[i][ii];
+		}
+		if (t[ii] === "B") {
+			dp[i][ii + 1] = dp[i][ii];
+		}
+		if (s[i] == t[ii]) {
+			dp[i + 1][ii + 1] = dp[i][ii];
 		}
 	}
-	if (flg_ok) console.log("YES");
 }
+console.log(dp[s.length][t.length] ? "YES" : "NO");
