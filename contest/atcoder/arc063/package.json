@@ -1,0 +1,16 @@
+{
+  "name": "comp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc"
+  },
+  "author": "Tatamo",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@types/node": "^9.3.0",
+    "typescript": "^2.6.2"
+  }
+}
