@@ -1,5 +1,6 @@
 out
 a.out
+*.exe
 node_modules/
 typings/
 gomi/
