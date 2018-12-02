@@ -1,0 +1,6 @@
+{
+  "program": ["main.ts"],
+  "submit": "main.ts",
+  "testdir": "tests"
+}
+
